@@ -1,5 +1,8 @@
-import api from "./axiosConfig";
+import axios from "axios";
 
-// ejemplo
-export const login = (correo, contrasena) =>
-  api.post("/usuarios/login", { correo, contrasena });
+const API_URL = "https://backend-healthturn.onrender.com/api/usuarios"; // o la URL que uses
+
+export const getUsuarios = async () => {
+  const response = await axios.get(API_URL);
+  return response.data;
+};
